@@ -6,7 +6,7 @@
 /*   By: akapusti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 15:58:06 by akapusti          #+#    #+#             */
-/*   Updated: 2023/02/19 16:42:23 by akapusti         ###   ########.fr       */
+/*   Updated: 2023/02/22 15:50:31 by akapusti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ char	*ft_strchr(const char *str, int ch);
 char	*ft_strjoin(char *s1, char *s2);
 char	*ft_strdup(const char *src);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
-
-char    *get_next_line(int fd);
+char	*get_next_line(int fd);
 
 #endif
