@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <get_next_line.h>
+#include "get_next_line.h"
 
 size_t	ft_strlen(const char *s)
 {
@@ -91,6 +91,25 @@ char	*ft_strdup(const char *src)
 	return (dest);
 }
 
+/*size_t	ft_strlcpy(char *dest, const char *src, size_t size)
+{
+	size_t	i;
+	size_t	j;
+
+	i = 0;
+	j = ft_strlen(src);
+	if (size != 0)
+	{
+		while (src[i] != '\0' && i < size - 1)
+		{
+			dest[i] = src[i];
+			i++;
+		}
+		dest[i] = '\0';
+	}
+	return (j);
+}
+
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	size;
@@ -105,5 +124,32 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (start >= ft_strlen(s))
 		return (ft_strdup(""));
 	ft_strlcpy(str, &s[start], len + 1);
+	return (str);
+}*/
+
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+{
+	char		*str;
+	size_t		range;
+	size_t		i;
+
+	if (!s || !(*s))
+		return (NULL);
+	i = ft_strlen(s);
+	range = 0;
+	if (start < i)
+		range = i - start;
+	if (range > len)
+		range = len;
+	str = (char *)malloc((range + 1) * sizeof(char));
+	if (!str)
+		return (NULL);
+	i = 0;
+	while (i < range)
+	{
+		*(str + i) = *(s + start + i);
+		i++;
+	}
+	*(str + i) = '\0';
 	return (str);
 }
